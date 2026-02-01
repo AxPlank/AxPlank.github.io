@@ -1,4 +1,3 @@
-remote_theme: cotes2020/jekyll-theme-chirpy
+theme: jekyll-theme-minimal
 title: 소 잃고 외양간 고치는 사람
 timezone: Asia/Seoul
-url: https://AxPlank.github.io
