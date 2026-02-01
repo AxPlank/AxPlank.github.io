@@ -1,6 +1,3 @@
-remote_theme: mmistakes/minimal-mistakes
 title: 소 잃고 외양간 고치는 사람
-description: AxPlank의 기술 블로그
-url: "https://AxPlank.github.io"
-name: AxPlank
-minimal_mistakes_skin: default  # air, contrast 등 선택
+description: AxPlank의 블로그
+theme: jekyll-theme-minimal
