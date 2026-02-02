@@ -24,7 +24,7 @@ pre {
   overflow: hidden !important;
   font-family: 'SF Mono', Monaco, 'Roboto Mono', monospace !important;
 
-  // 타이틀 바 (이미지 정확 복사)
+  // 타이틀 바
   &::before {
     content: '' !important;
     position: absolute !important;
@@ -38,17 +38,20 @@ pre {
     z-index: 10 !important;
   }
 
-  // 🎯 빨강 점 (왼쪽 첫번째 - 확실 작동)
+  // 3개 점 (빨강, 노랑, 초록) - 그라디언트로 표현
   &::after {
     content: '' !important;
     position: absolute !important;
-    top: 9px !important;
+    top: 10px !important;
     left: 16px !important;
-    width: var(--dot-size) !important;
+    width: calc(var(--dot-size) * 3 + var(--dot-gap) * 2) !important;
     height: var(--dot-size) !important;
-    background: #fe5f58 !important;
-    border-radius: 50% !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+    background: 
+      radial-gradient(circle at calc(var(--dot-size) / 2) 50%, #fe5f58 0%, #fe5f58 calc(var(--dot-size) / 2), transparent calc(var(--dot-size) / 2)),
+      radial-gradient(circle at calc(var(--dot-size) / 2 + var(--dot-size) + var(--dot-gap)) 50%, #febc2e 0%, #febc2e calc(var(--dot-size) / 2), transparent calc(var(--dot-size) / 2)),
+      radial-gradient(circle at calc(var(--dot-size) / 2 + (var(--dot-size) + var(--dot-gap)) * 2) 50%, #28c840 0%, #28c840 calc(var(--dot-size) / 2), transparent calc(var(--dot-size) / 2))
+    !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) !important;
     z-index: 20 !important;
   }
 }
