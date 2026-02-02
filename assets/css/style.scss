@@ -11,13 +11,20 @@ body, html {
 }
 
 pre {
+  --dot-size: 12px;
+  --dot-gap: 10px;
+  
   position: relative !important;
-  padding-top: 36px !important;
   background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%) !important;
-  border-radius: 10px !important;
   border: 1px solid #333 !important;
+  border-radius: 10px !important;
+  padding: 40px 20px 24px !important;
+  margin: 16px 0 !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+  overflow: hidden !important;
+  font-family: 'SF Mono', Monaco, 'Roboto Mono', monospace !important;
 
-  // 🎯 탭 바 컨테이너
+  // 타이틀 바 (이미지 정확 복사)
   &::before {
     content: '' !important;
     position: absolute !important;
@@ -25,46 +32,23 @@ pre {
     left: 0 !important;
     right: 0 !important;
     height: 32px !important;
-    background: linear-gradient(90deg, #272727 0%, #2d2d2d 100%) !important;
+    background: linear-gradient(90deg, #272727 0%, #2d2d2d 50%, #282828 100%) !important;
     border-radius: 10px 10px 0 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    padding-left: 16px !important;
-    gap: 10px !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03) !important;
     z-index: 10 !important;
-    
-    // 🔥 빨강 점 (1번째)
-    &::before {
-      content: '' !important;
-      width: 13px !important;
-      height: 13px !important;
-      border-radius: 50% !important;
-      background: #fe5f58 !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-    }
-    
-    // 🔥 노랑 점 (2번째)
-    &::after {
-      content: '' !important;
-      width: 13px !important;
-      height: 13px !important;
-      border-radius: 50% !important;
-      background: #ffbd2d !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-    }
   }
 
-  // 🔥 초록 점 (별도 추가 - 3번째 점)
+  // 🎯 빨강 점 (왼쪽 첫번째 - 확실 작동)
   &::after {
     content: '' !important;
     position: absolute !important;
-    top: 8px !important;
-    left: 52px !important;  // 첫번째 점(16px) + gap(10px) + 두번째 점(13px) + gap(10px) + 3px 여백
-    width: 13px !important;
-    height: 13px !important;
+    top: 9px !important;
+    left: 16px !important;
+    width: var(--dot-size) !important;
+    height: var(--dot-size) !important;
+    background: #fe5f58 !important;
     border-radius: 50% !important;
-    background: #30d158 !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-    z-index: 11 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+    z-index: 20 !important;
   }
 }
