@@ -11,53 +11,60 @@ body, html {
 }
 
 pre {
-  // 🖥️ 실제 Mac 터미널 어두운 배경 (이미지 #1e1e1e~#2d2d2d)
-  background: linear-gradient(180deg, 
-    #1f1f1f 0%, 
-    #1a1a1a 50%, 
-    #121212 100%);
-  border: 1px solid #333;
-  border-radius: 10px;
-  padding: 36px 20px 24px; // 타이틀 바 공간
-  box-shadow: 0 4px 24px rgba(0,0,0,0.6);
-  position: relative;
-  
-  // 🎯 Mac 타이틀 바 (이미지 상단 회색 영역 정확 복사)
+  position: relative !important;
+  padding-top: 36px !important;
+  background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%) !important;
+  border-radius: 10px !important;
+  border: 1px solid #333 !important;
+
+  // 🎯 탭 바 컨테이너
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 32px;
-    // 실제 Mac Dark Mode 타이틀 바 색상
-    background: linear-gradient(90deg, 
-      #272727 0%, 
-      #2d2d2d 50%, 
-      #282828 100%);
-    border-radius: 10px 10px 0 0;
-    box-shadow: 
-      inset 0 1px 0 rgba(255,255,255,0.03),
-      0 1px 0 rgba(255,255,255,0.05);
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 32px !important;
+    background: linear-gradient(90deg, #272727 0%, #2d2d2d 100%) !important;
+    border-radius: 10px 10px 0 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 16px !important;
+    gap: 10px !important;
+    z-index: 10 !important;
     
-    // 🔥 이미지 정확 3색 점 (크기/간격/색상 픽셀 단위 복사)
-    display: flex;
-    align-items: center;
-    padding-left: 16px;
-    gap: 10px;
-    
-    &::before,
-    &::after,
-    & > span {
-      content: '';
-      width: 13px;  // 이미지 실제 크기
-      height: 13px;
-      border-radius: 50%;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    // 🔥 빨강 점 (1번째)
+    &::before {
+      content: '' !important;
+      width: 13px !important;
+      height: 13px !important;
+      border-radius: 50% !important;
+      background: #fe5f58 !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
     }
     
-    &::before { background: #fe5f58; }  // 이미지 빨강 #fe5f58
-    &::after { background: #ffbd2d; }   // 이미지 노랑 #ffbd2d  
-    & > span { background: #30d158; }   // 이미지 초록 #30d158
+    // 🔥 노랑 점 (2번째)
+    &::after {
+      content: '' !important;
+      width: 13px !important;
+      height: 13px !important;
+      border-radius: 50% !important;
+      background: #ffbd2d !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+    }
+  }
+
+  // 🔥 초록 점 (별도 추가 - 3번째 점)
+  &::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 8px !important;
+    left: 52px !important;  // 첫번째 점(16px) + gap(10px) + 두번째 점(13px) + gap(10px) + 3px 여백
+    width: 13px !important;
+    height: 13px !important;
+    border-radius: 50% !important;
+    background: #30d158 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+    z-index: 11 !important;
   }
 }
