@@ -8,10 +8,8 @@ role: "Security & Network Engineer"
 
 description: "보안과 네트워크를 중심으로 한 포트폴리오와 기술 블로그입니다."
 
-# Navigation (sidebar menu) - moved to top
+# Navigation (sidebar menu)
 navigation:
-  - name: "Home"
-    link: "/"
   - name: "Portfolio"
     link: "/portfolio/"
   - name: "Blog"
@@ -19,7 +17,7 @@ navigation:
   - name: "About"
     link: "/about/"
 
-# Platforms (social links) - moved to bottom
+# Platforms (social links)
 platforms:
   - name: "GitHub"
     link: "#"  # TODO: Add GitHub profile URL later
