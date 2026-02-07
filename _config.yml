@@ -1,6 +1,6 @@
 # Site settings
 lang: ko-KR
-logo: /assets/img/profile-hero.jpg  # Profile image in sidebar
+logo: /assets/img/profile-hero.png  # Profile image in sidebar (PNG format)
 
 # Sidebar (SL) profile
 name: "papusKR"
